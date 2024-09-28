@@ -3,6 +3,7 @@ import '../utils/dotenv';
 export const NODE_ENV = process.env.NODE_ENV || 'local';
 
 export const PIXABAY_KEY = (process.env.PIXABAY_KEY as string) || 'localhost';
+export const CACHING_IN_SECONDS = +((process.env.CACHING_IN_SECONDS as string) || '60');
 
 export const REDIS_HOST = (process.env.REDIS_HOST as string) || 'localhost';
 export const REDIS_PORT = +(process.env.REDIS_PORT as string) || 6379;

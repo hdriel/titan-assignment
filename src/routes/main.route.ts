@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express';
-import { logAPI } from '../middleware';
+import { logApiMW } from '../middleware';
 
 export const router: Router = Router();
 
-router.use(logAPI());
+router.use(logApiMW());
 
 router.get('/health', (_req: Request, res: Response) => {
     res.status(200).json({ status: true });

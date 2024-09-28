@@ -5,6 +5,7 @@ export const userSchema = new Schema<IUSER>(
     {
         firstName: { type: String, trim: true },
         lastName: { type: String, trim: true },
+        email: { type: String, trim: true },
         active: { type: Boolean, default: true },
     },
     { timestamps: true }

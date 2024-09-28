@@ -1,3 +1,4 @@
+import { Types } from 'mongoose';
 import { BASE_TABLE } from './base.interface';
 
 export interface IORDER extends BASE_TABLE {
@@ -7,5 +8,5 @@ export interface IORDER extends BASE_TABLE {
     fullAddress: string;
     images: string[];
     frameColor: string;
-    user: string;
+    user: Types.ObjectId;
 }
