@@ -149,6 +149,7 @@ docker-compose up -d
 - **dotenv** (for environment variable management)
 - **Swagger** (for interactive apis testing)
 - **Mongo-migrate** (for setup data on initialized server)
+- **JOI** (for data validation on apis)
 
 ## Caching Strategy
 
