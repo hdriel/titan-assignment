@@ -42,7 +42,7 @@ To get the project up and running, follow these steps:
 
 ### Environment Variables
 
-Ensure you have a `.env` file with the following variables:
+Ensure you have a `.env.local` file with the following variables:
 
 ```bash
 PIXABAY_API_KEY=45640711-3b2c9c3e0dd9ac6e6a5b798be
