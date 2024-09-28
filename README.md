@@ -40,6 +40,12 @@ To get the project up and running, follow these steps:
    npm start
    ```
 
+6. open url (include the port on the server is on to)
+
+   ```
+    http://localhost:9020/swagger
+   ```
+   
 ### Environment Variables
 
 Ensure you have a `.env.local` file with the following variables:
@@ -70,6 +76,7 @@ docker-compose up -d
 - **Response**:
   ```json
   {
+    "total": 15,
     "photos": ["url1", "url2", "..."]
   }
   ```
@@ -101,7 +108,8 @@ docker-compose up -d
     "imageUrls": ["url1", "url2"],
     "frameColor": "black",
     "user": "userId",
-    "createdAt": "2024-09-28T12:34:56Z"
+    "createdAt": "2024-09-28T12:34:56Z",
+    "active": true
   }
   ```
 
@@ -112,7 +120,9 @@ docker-compose up -d
 - **Description**: Returns a list of all orders associated with a specific user.
 - **Response**:
   ```json
-  [
+  {
+    "total": 25,
+    "orders": [
     {
       "_id": "orderId",
       "email": "example@example.com",
@@ -125,6 +135,7 @@ docker-compose up -d
     },
     ...
   ]
+  }
   ```
 
 ## Technologies Used
@@ -136,6 +147,8 @@ docker-compose up -d
 - **Axios** (for handling API requests)
 - **Winston** (for logging)
 - **dotenv** (for environment variable management)
+- **Swagger** (for interactive apis testing)
+- **Mongo-migrate** (for setup data on initialized server)
 
 ## Caching Strategy
 
@@ -151,8 +164,5 @@ Edge cases were not fully implemented due to time constraints. Future improvemen
 
 ## Future Improvements
 
-- **Edge case handling**: Implement better error handling and validation.
 - **Testing**: Add unit and integration tests to ensure code robustness.
-- **Swagger**: Add swagger to test the server api in easy way
-- **Migration**: Add mongo-migrate to init the db with some initial dats
 

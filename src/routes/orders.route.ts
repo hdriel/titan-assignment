@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { asyncHandlerWrapper, logApiMW } from '../middleware';
+import { asyncHandlerWrapper, JoiSchemaValidationMW, logApiMW } from '../middleware';
 import { getOrdersCtrl, createOrderCtrl } from '../controllers/orders.controller';
-
+import { orderJoiSchema } from '../validations';
 export const router: Router = Router();
 
 router.use(logApiMW());
@@ -101,4 +101,4 @@ router.get('/:userId', asyncHandlerWrapper(getOrdersCtrl));
  *       500:
  *         description: Internal server error
  */
-router.post('/', asyncHandlerWrapper(createOrderCtrl));
+router.post('/', JoiSchemaValidationMW(orderJoiSchema), asyncHandlerWrapper(createOrderCtrl));
