@@ -8,7 +8,7 @@ export const initSwagger = (app: Express) => {
     // @ts-ignore
     swaggerDocument.swaggerDefinition.components.schemas = schemas;
     const swaggerOptions = {
-        // customCssUrl: '/swagger.css'
+        customCssUrl: '/swagger.css',
     };
 
     const swaggerDocs = swaggerJsDoc(swaggerDocument);

@@ -2,11 +2,13 @@ import express, { ErrorRequestHandler, Express, NextFunction, Response, Request 
 import { json, urlencoded } from 'body-parser';
 import { initAppRoutes } from './routes';
 import { initSwagger } from './swagger';
+import { PUBLIC_DIR_PATH } from './consts/paths';
 
 const app: Express = express();
 
 app.use(json());
 app.use(urlencoded({ extended: true }));
+app.use(express.static(PUBLIC_DIR_PATH));
 
 initAppRoutes(app);
 
