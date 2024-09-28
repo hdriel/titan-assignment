@@ -1,0 +1,24 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.3",
+    "info": {
+      "version": "1.0.0",
+      "title": "TITAN Assignment API",
+      "description": "A API built with Express and MongoDB.\nThis API provides orders, users, and photos data.",
+      "contact": {
+        "name": "Hadriel",
+        "url": "https://github.com/hdriel/titan-assignment"
+      }
+    },
+    "basePath": "/swagger",
+    "tags": [
+      { "name": "Main operations" },
+      { "name": "Images operations" },
+      { "name": "Orders operations" }
+    ],
+    "components": {
+      "schemas": null
+    }
+  },
+  "apis": ["**/*.ts"]
+}
