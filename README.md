@@ -147,4 +147,6 @@ Edge cases were not fully implemented due to time constraints. Future improvemen
 
 - **Edge case handling**: Implement better error handling and validation.
 - **Testing**: Add unit and integration tests to ensure code robustness.
+- **Swagger**: Add swagger to test the server api in easy way
+- **Migration**: Add mongo-migrate to init the db with some initial dats
 
