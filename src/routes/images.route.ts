@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { asyncHandlerWrapper, logApiMW } from '../middleware';
+import { asyncHandlerWrapper, JoiSchemaValidationMW, logApiMW } from '../middleware';
 import { getImageCtrl } from '../controllers/images.controller';
+import { totalImagesJoiSchema } from '../validations';
 
 export const router: Router = Router();
 
@@ -36,4 +37,4 @@ router.use(logApiMW());
  *       500:
  *         description: Internal server error
  */
-router.get('/:total', asyncHandlerWrapper(getImageCtrl));
+router.get('/:total', JoiSchemaValidationMW(totalImagesJoiSchema, 'params'), asyncHandlerWrapper(getImageCtrl));
