@@ -17,7 +17,7 @@ export const getImageCtrl = async (req: Request, res: Response, next: NextFuncti
 
         const result = await getImagesServiceHandler(total);
 
-        return res.status(200).json({ photos: result });
+        return res.status(200).json({ total: result.length, photos: result });
     } catch (error) {
         logger.warn(null, 'Failed on GET images', { ...req.params, error: (<any>error)?.message ?? error });
         return next(error);

@@ -9,7 +9,7 @@ export const getOrdersCtrl = async (req: Request, res: Response, next: NextFunct
         const userId = req.params.userId as string;
         const result = await getOrdersByUserId(userId);
 
-        return res.status(200).json({ orders: result });
+        return res.status(200).json({ total: result?.length ?? 0, orders: result ?? [] });
     } catch (error) {
         logger.warn(null, 'Failed on GET orders', { ...req.params, error: (<any>error)?.message ?? error });
         return next(error);
