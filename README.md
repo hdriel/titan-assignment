@@ -28,7 +28,13 @@ To get the project up and running, follow these steps:
    npm run build
    ```
 
-4. Start the server:
+4. Run docker: 
+
+   ```bash
+   npm run docker:start
+   ```
+
+5. Start the server:
 
    ```bash
    npm start

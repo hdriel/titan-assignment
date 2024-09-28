@@ -4,3 +4,4 @@
 .env.prod*
 .idea
 logs
+docker-data
