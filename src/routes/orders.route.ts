@@ -1,14 +1,11 @@
-import { Request, Response, Router } from 'express';
-import { logApiMW } from '../middleware';
+import { Router } from 'express';
+import { asyncHandlerWrapper, logApiMW } from '../middleware';
+import { getOrdersCtrl, createOrderCtrl } from '../controllers/orders.controller';
 
 export const router: Router = Router();
 
 router.use(logApiMW());
 
-router.get('/:userId', (_req: Request, res: Response) => {
-    res.status(200).json({ status: true });
-});
+router.get('/:userId', asyncHandlerWrapper(getOrdersCtrl));
 
-router.post('/', (_req: Request, res: Response) => {
-    res.status(200).send('Hello World!');
-});
+router.post('/', asyncHandlerWrapper(createOrderCtrl));

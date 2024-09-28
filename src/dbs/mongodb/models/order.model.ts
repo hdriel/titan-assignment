@@ -5,7 +5,7 @@ import { IORDER } from '../../../interfaces';
 
 export const OrderModelMongoose = mongoose.model(TABLES.ORDERS, orderSchema);
 
-export const createOrder = async (order: Omit<IORDER, '_id' | 'createdAt' | 'updatedAt'>) => {
+export const createOrder = async (order: Omit<Partial<IORDER>, '_id' | 'createdAt' | 'updatedAt'>) => {
     return OrderModelMongoose.create(order);
 };
 
