@@ -506,10 +506,10 @@ module.exports = {
         const users = await db.collection('users').find({}).toArray();
 
         for (const order of orders.slice(0, orders.length / 2)) {
-            order.user = users[0]._id.toString();
+            order.user = users[0]._id;
         }
         for (const order of orders.slice(orders.length / 2)) {
-            order.user = users[1]._id.toString();
+            order.user = users[1]._id;
         }
 
         await db.collection('orders').insertMany(orders);
