@@ -1,13 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import logger from '../utils/logger';
 import { IORDER } from '../interfaces';
-import { createOrderServiceHandler } from '../services/orders.service';
-import { getOrdersByUserId } from '../dbs/mongodb';
+import { createOrderServiceHandler, getOrderByUserIdServiceHandler } from '../services/orders.service';
 
 export const getOrdersCtrl = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const userId = req.params.userId as string;
-        const result = await getOrdersByUserId(userId);
+        const result = await getOrderByUserIdServiceHandler(userId);
 
         return res.status(200).json({ total: result?.length ?? 0, orders: result ?? [] });
     } catch (error) {

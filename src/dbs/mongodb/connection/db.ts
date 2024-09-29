@@ -45,11 +45,7 @@ export async function migrateDB(uri: string = getConnectionDB()) {
     if (!uri) throw Error('Missing connection string uri');
 
     migrate.config.set({
-        mongodb: {
-            url: uri,
-            // @ts-ignore
-            options: { useNewUrlParser: true },
-        },
+        mongodb: { url: uri },
         migrationsDir: MIGRATIONS_DIR_PATH,
         changelogCollectionName: 'changelog',
         migrationFileExtension: '.js',

@@ -10,5 +10,5 @@ export const createOrder = async (order: Omit<Partial<IORDER>, '_id' | 'createdA
 };
 
 export const getOrdersByUserId = async (userId: string) => {
-    return OrderModelMongoose.find({ user: userId });
+    return OrderModelMongoose.find({ active: true, user: userId });
 };

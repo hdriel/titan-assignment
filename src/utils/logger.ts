@@ -169,7 +169,7 @@ export class Logger {
     }
 }
 
-const logger = new Logger();
+const logger = new Logger('TITAN');
 export default logger;
 
 // Print the first log, with the current logging mode
